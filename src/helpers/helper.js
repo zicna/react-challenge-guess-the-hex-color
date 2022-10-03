@@ -27,6 +27,7 @@ export const randHex = () => {
 
 // * returns random number [0, upperLimit]
 // * 0 and upperLimit included
+// * with last refactor it is not needed anymore
 
 export const randNum = (lowerLimit, upperLimit) => {
   return Math.floor(Math.random() * (upperLimit - lowerLimit + 1) + lowerLimit)
