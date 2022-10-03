@@ -19,6 +19,7 @@ const AnswerContainer = ({ answer, gameNum, countCorrect, correctAnswer }) => {
           </span>
         </p>
       )}
+      {correctAnswer === '' && <p>We will display correct answer here</p>}
     </div>
   )
 }

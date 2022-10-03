@@ -14,22 +14,20 @@
   margin: auto;
 }
 
-.btnContainer{
+.btnContainer {
   margin-bottom: 7rem;
 }
 
-.btn{
-    padding: .5rem 2rem;
-    margin: 1rem;
-    font-weight: 700;
-    font-size: larger;
-    letter-spacing: 2px; 
-    border-radius: 4px;
-    cursor: pointer;
+.btn {
+  padding: 0.5rem 2rem;
+  margin: 1rem;
+  font-weight: 700;
+  font-size: larger;
+  letter-spacing: 2px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.btn:hover{
+.btn:hover {
   background-color: #999;
 }
-
-

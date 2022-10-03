@@ -3,11 +3,17 @@
   justify-content: center;
   text-align: center;
   flex-direction: column;
+  /* min-height: 30%; */
 }
 
 .container p {
     font-size: larger;
     font-weight: 700;
+}
+
+.container span{
+  padding: .5rem 1rem;
+  border-radius: 4px;
 }
 
 .correct {
