@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.container p {
+    font-size: larger;
+    font-weight: 700;
+}
+
+.correct {
+  color: green;
+}
+
+.wrong {
+  color: red;
+}
+
+.neutral {
+  color: blue;
+}

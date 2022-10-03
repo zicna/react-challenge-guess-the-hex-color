@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  height: 80%;
+  flex-direction: column;
+}
+
+.randColor {
+  border-radius: 4px;
+  background-color: black;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+.btnContainer{
+  margin-bottom: 7rem;
+}
+
+.btn{
+    padding: .5rem 2rem;
+    margin: 1rem;
+    font-weight: 700;
+    font-size: larger;
+    letter-spacing: 2px; 
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover{
+  background-color: #999;
+}
+
+
