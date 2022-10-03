@@ -1,8 +1,14 @@
-import React, { useMemo, memo } from 'react'
+import React, { useMemo, memo, useState } from 'react'
 import styles from './main-container.module.css'
 import { randHex, randNum } from '../helpers/helper'
 
-const MainContainer = ({ setAnswer, setGameNum, gameNum, setCountCorrect, setCorrectAnswer }) => {
+const MainContainer = ({
+  setAnswer,
+  setGameNum,
+  gameNum,
+  setCountCorrect,
+  setCorrectAnswer,
+}) => {
   const colors = useMemo(() => {
     return { 0: randHex(), 1: randHex(), 2: randHex() }
   }, [gameNum])
@@ -11,22 +17,20 @@ const MainContainer = ({ setAnswer, setGameNum, gameNum, setCountCorrect, setCor
   const choosenColor = colors[randomIndex]
 
   const btnClickHandler = (event) => {
-    let waitTime = 3000
     if (event.target.value === choosenColor) {
       setAnswer('correct')
       setCountCorrect((prevValue) => prevValue + 1)
     } else {
       setAnswer('wrong')
-      waitTime = 5000
     }
 
     setCorrectAnswer(choosenColor)
-    
+
     setTimeout(() => {
       setGameNum((prevValue) => prevValue + 1)
       setAnswer('Please guess hex color')
       setCorrectAnswer('')
-    }, waitTime)
+    }, 4000)
   }
 
   return (
