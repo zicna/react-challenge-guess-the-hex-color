@@ -9,22 +9,20 @@ const MainContainer = ({
   setCountCorrect,
   setCorrectAnswer,
 }) => {
+  const color = randHex()
   const colors = useMemo(() => {
-    return { 0: randHex(), 1: randHex(), 2: randHex() }
+    return [color, randHex(), randHex()]
   }, [gameNum])
 
-  const randomIndex = randNum(0, 2)
-  const choosenColor = colors[randomIndex]
-
   const btnClickHandler = (event) => {
-    if (event.target.value === choosenColor) {
+    if (event.target.value === color) {
       setAnswer('correct')
       setCountCorrect((prevValue) => prevValue + 1)
     } else {
       setAnswer('wrong')
     }
 
-    setCorrectAnswer(choosenColor)
+    setCorrectAnswer(color)
 
     setTimeout(() => {
       setGameNum((prevValue) => prevValue + 1)
@@ -33,36 +31,30 @@ const MainContainer = ({
     }, 4000)
   }
 
+  const btnsJSX = () => {
+    return colors
+      .sort(() => 0.5 - Math.random())
+      .map((color) => {
+        return (
+          <button
+            className={styles.btn}
+            onClick={btnClickHandler}
+            value={color}
+          >
+            {color}
+          </button>
+        )
+      })
+  }
+
   return (
     <>
       <div className={styles.container}>
         <div
           className={styles.randColor}
-          style={{ backgroundColor: choosenColor }}
+          style={{ backgroundColor: color }}
         ></div>
-        <div className={styles.btnContainer}>
-          <button
-            onClick={btnClickHandler}
-            className={styles.btn}
-            value={colors[0]}
-          >
-            {colors[0]}
-          </button>
-          <button
-            onClick={btnClickHandler}
-            className={styles.btn}
-            value={colors[1]}
-          >
-            {colors[1]}
-          </button>
-          <button
-            onClick={btnClickHandler}
-            className={styles.btn}
-            value={colors[2]}
-          >
-            {colors[2]}
-          </button>
-        </div>
+        <div className={styles.btnContainer}>{btnsJSX()}</div>
       </div>
     </>
   )
